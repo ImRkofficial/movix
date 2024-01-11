@@ -47,7 +47,7 @@ function App() {
 
     const data = await Promise.all(promises);
     
-    data.map(({genres})=>{
+    data?.map(({genres})=>{
       return genres.map((item)=> ( allGeners[item.id] = item))
     })
 

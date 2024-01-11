@@ -48,10 +48,10 @@ const DetailsBanner = ({ video, crew }) => {
               <ContentWrapper>
                 <div className="content">
                   <div className="left">
-                    {data.poster_path ? (
+                    {data?.poster_path ? (
                        <Img
                         className={"posterImg"}
-                        src={url.backdrop + data.poster_path}
+                        src={url.backdrop + data?.poster_path}
                        />
                      ) : (
                       <Img 
@@ -63,11 +63,11 @@ const DetailsBanner = ({ video, crew }) => {
 
                     <div className="right">
                       <div className="title">
-                         {`${data.name || data.title} (${dayjs(
-                           data.release_date
+                         {`${data?.name || data?.title} (${dayjs(
+                           data?.release_date
                           ).format("YYYY")}) `}
                        </div>
-                       <div className="subtitle">{data.tagline}</div>
+                       <div className="subtitle">{data?.tagline}</div>
                        <Genres data={_genres} />
 
                         <div className="row">
@@ -86,38 +86,38 @@ const DetailsBanner = ({ video, crew }) => {
                                 Overview
                             </div>
                             <div className="description">
-                                {data.overview}
+                                {data?.overview}
                             </div>
                         </div>
 
                         <div className="info">
-                            {data.status && (
+                            {data?.status && (
                                 <div className="infoItem">
                                     <span className="text bold">
                                         Status: {" "}
                                     </span>
                                     <span className="text">
-                                        {data.status}
+                                        {data?.status}
                                     </span>
                                 </div>
                             )}
-                            {data.release_date && (
+                            {data?.release_date && (
                                 <div className="infoItem">
                                     <span className="text bold">
                                         Release Date: {" "}
                                     </span>
                                     <span className="text">
-                                        {dayjs(data.release_date).format("MMM D, YYYY")}
+                                        {dayjs(data?.release_date).format("MMM D, YYYY")}
                                     </span>
                                 </div>
                             )}
-                            {data.runtime && (
+                            {data?.runtime && (
                                 <div className="infoItem">
                                     <span className="text bold">
                                         Runtime: {" "}
                                     </span>
                                     <span className="text">
-                                        {toHoursAndMinutes(data.runtime)}
+                                        {toHoursAndMinutes(data?.runtime)}
                                     </span>
                                 </div>
                             )}
