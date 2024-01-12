@@ -22,7 +22,8 @@ const HeroBanner = () => {
     const {data,loading} = useFetch('/movie/upcoming');
 
     useEffect(()=>{
-        const bg = url.backdrop + data?.results[Math.floor(Math.random() * data?.results?.length-1)]?.backdrop_path;
+        const bg = url.backdrop ? url.backdrop :"https://image.tmdb.org/t/p/original" + data?.results[Math.floor(Math.random() * data?.results?.length-1)]?.backdrop_path;
+       console.log(bg)
         setBackground(bg);
         console.log(bg)
     },[data])
